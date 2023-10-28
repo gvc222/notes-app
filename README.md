@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Boinkie's Notes App
 
 Deployed with Netlify App: https://main--frolicking-klepon-d462fc.netlify.app/
 

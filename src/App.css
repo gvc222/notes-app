@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  /* border: 2px dashed red; */
+}
+
+.notes {
+  display: grid;
+  grid-gap: 1rem;
+  /* specifies how many columns we want our grid to have */
+  /* auto-fit automatically resizes columns based on column side based on second argument minmax. Cannot be bigger than 1fr, cannot be smaller than 250px. */
+  /* fr = fractional unit, whatever space is available or "free" */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+}
+.note {
+  background-color: rgb(255, 214, 132);
+  max-width: 100%;
+  min-height: 180px;
+  /* Basic css below without using grid */
+  /* width: 200px;
+  height: 200px;
+  margin-bottom: 10px; */
+  border-radius: 10px;
+  /* Puts a cushion around the text within each note card */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Using a flexbox with column direction, using space between puts text on top and footer at bottom */
+  /* Keep whitespace lines */
+  white-space: pre-wrap;
+}
+
+.note-footer {
+  display: flex;
+  /* aligns vertically to be in center of container */
+  align-items: center;
+  /* puts the date and the delete icon at both left and right ends of the note, with padding on each side */
+  justify-content: space-between;
+}
+
+textarea {
+  background-color: transparent;
+  /* removes blue border when focused/clicked */
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+.note.new {
+  background-color: pink;
+}
+
+.save {
+  appearance: none;
+  border: none;
+  background-color: rgb(213, 105, 123);
+  color: white;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+
+.save:hover {
+  cursor: pointer;
+  background-color: rgba(213, 105, 123, 0.5)
+}
+
+.save:active {
+  background-color: rgba(213, 105, 123, 0.825)
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.search-bar {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: rgb(231, 231, 231);
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-mode {
+  background-color: black;
+
+}
+
+.dark-mode h1{
+  color: white;
+}
+
+.toggle-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

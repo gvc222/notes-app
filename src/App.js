@@ -49,7 +49,6 @@ useEffect(() => {
     // Labels and stringifies data before saving to local storage
     // While inspecting using Dev Tools, click "Application" > "Local Storage" and find that the key is stored as "react-notes-app-data" and the data is the value
     localStorage.setItem('react-notes-app-data', JSON.stringify(notes))
-    console.log("JSON stringify", JSON.stringify(notes))
     console.log('Notes saved to local storage:', notes)
     //dependency array, triggers useEffect whenever there's changes in this array's content(s).
   }, [notes])

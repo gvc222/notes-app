@@ -75,7 +75,20 @@ const deleteNote = (id) => {
   setNotes(newNotes);
 }
 
-
+const editNote = (id, newTypeText) => {
+  const date = new Date();
+  //map to the note that matches id, save the original note as edit history
+  //use form so user can edit text
+  const editedNotes = notes.map((note) => {
+    if (id === note.id) {
+      return {
+        ...note, text: newTypeText, date: date.toLocaleDateString()
+      }
+    }
+    return note;
+  });
+  setNotes(editedNotes);
+}
 
   return (
     // I put the entire App into a dark mode toggle.
@@ -86,7 +99,7 @@ const deleteNote = (id) => {
         <ToggleDarkMode toggleDarkness={setDarkMode}/>
         <Search handleSearch={setQuery}/>
         {/* Takes current notes array, filters to only return all note that includes the (query), which is what we type in the search bar */}
-        <Notes notes={notes.filter((note) => note.text.toLowerCase().includes(query))} addNote={addNote} deleteNote={deleteNote}/>
+        <Notes notes={notes.filter((note) => note.text.toLowerCase().includes(query))} addNote={addNote} deleteNote={deleteNote} editNote={editNote}/>
       
       </div>
     </div>

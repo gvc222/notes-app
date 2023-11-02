@@ -22,13 +22,14 @@ export const Note = ( { id, text, date, deleteNote, editNote }) => {
   const editingTemplate = (
     <form className="note" onSubmit={submitNote}>
         <div className="form-group">
-          <label className="edit-label" htmlFor={Note.id}>Editing Note {Note.id}</label>
-          <input
+          <label className="edit-label" htmlFor={Note.id}>Editing Note: {Note.text}</label>
+          <textarea
           onChange={handleChange}
           cols="28" 
           rows="8" 
           value={typeText} 
-          id={Note.id} type="text" />
+          id={Note.id} type="text"
+          placeholder="edited note here"></textarea>
         </div>
         <div className="note-footer">
             <small>{date}</small>
